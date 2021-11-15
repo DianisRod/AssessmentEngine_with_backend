@@ -1,4 +1,8 @@
-AssessmentEngine mit einem kleinen Flask Backend
+AssessmentEngine mit einem kleinen Flask Backend.
+
+Das Formular wird dynamisch anhand eines Assignent-json gerendert.
+Der Client ist von den Daten getrennt und dient lediglich der Präsentation.
+
 
 Start via:
 
