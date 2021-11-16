@@ -91,9 +91,9 @@ function showResults(form){
 	
 	var output = [];
 	output.push('<div id="regForm"">');
-	output.push('<h1>Vielen Dank fuer Ihre Teilnahme!</h1>');
+	output.push('<h1>Vielen Dank für Ihre Teilnahme!</h1>');
 	output.push(solutions);
-	output.push('<a href="index.html">Zurueck zur Startseite</a>');
+	output.push('<a href="/">Zurück zur Startseite</a>');
 	output.push('</div>');
 	
 	contentContainer.innerHTML = output.join('');
