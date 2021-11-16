@@ -21,11 +21,11 @@ app.config.from_object(__name__)
 Session(app)
 
 ASSESSMENT_FOLDER = "assessments/"
-ASSESSMENT_JSON = "assessments/assessments.json"
 
 @app.route('/', methods=['GET'])
 def index():    
-    assessments=dict((f[:-5], ASSESSMENT_FOLDER+f ) for f in listdir("assessments") if isfile(join("assessments", f)) and f.endswith('.json'))
+    ext='.json'
+    assessments=dict((f[:-len(ext)], ASSESSMENT_FOLDER+f ) for f in listdir(ASSESSMENT_FOLDER) if isfile(join(ASSESSMENT_FOLDER, f)) and f.endswith(ext))
     session["assessments"]=assessments
     assessments_html = ''.join([''+join('<a href="'+k+'">'+k+'</a><br>\n') for k,v in assessments.items()])
     return render_template("index.html",
