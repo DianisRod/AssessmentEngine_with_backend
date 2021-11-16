@@ -1,10 +1,12 @@
 var currentTab = 0; // Current tab is set to be the first tab (0)
 
 var questions;
-var API = "http://127.0.0.1:5000/getassessments";
-$.getJSON( API, function( json ) {
-	questions = json;
- });
+
+var pathname = window.location.pathname;
+var API = "http://127.0.0.1:5000/getAssessmentFromWeb";
+$.post(API, {src:pathname}, function(response){ 
+    questions = response;
+});
 
 function main() {
 	showTab(currentTab); // Display the current tab
